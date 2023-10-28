@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tugas6_ferrygunawan/widget/body_widget.dart';
+import 'package:tugas6_ferrygunawan/widget/appbar_widget.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});
@@ -13,6 +14,7 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BodyWidget(),
+      appBar: AppBarWidget(),
     );
   }
 }
