@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tugas6_ferrygunawan/widget/body_widget.dart';
 import 'package:tugas6_ferrygunawan/widget/appbar_widget.dart';
 
 class MainPage extends StatefulWidget {
@@ -11,7 +12,8 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
+      body: BodyWidget(),
       appBar: AppBarWidget(),
     );
   }
