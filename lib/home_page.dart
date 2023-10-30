@@ -21,6 +21,9 @@ class _HomePageState extends State<HomePage> {
               children: [
                 CircleAvatar(
                   radius: 32,
+                  child: Center(
+                    child: Text("L"),
+                  ),
                 ),
                 SizedBox(
                   width: 16,
