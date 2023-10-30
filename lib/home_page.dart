@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tugas6_ferrygunawan/models/user_model.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -8,39 +9,46 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  List<UserModel> userData = [
+    UserModel("Leanne Graham", "1-770-736-8031 x56442"),
+    UserModel("Ervin Howell", "010-692-6593 x09125"),
+    UserModel("Clementine Bauch", "1-463-123-4447"),
+    UserModel("Patricla Lebsack", "493-170-9623 x156"),
+    UserModel("Chelsey Dietrich", "(254)954-1289"),
+    UserModel("Mrs. Dennis Schulist", "1-477-935-8478 x6430"),
+    UserModel("Kurtis Weissnat", "210.067.6132"),
+  ];
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16.0),
-      child: ListView.builder(
-        itemCount: 3,
-        itemBuilder: (context, index) {
-          return const Padding(
-            padding: EdgeInsets.only(bottom: 16),
-            child: Row(
-              children: [
-                CircleAvatar(
-                  radius: 32,
-                  child: Center(
-                    child: Text("L"),
-                  ),
+    return ListView.builder(
+      itemCount: userData.length,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.only(left: 12, top: 16, right: 16),
+          child: Row(
+            children: [
+              CircleAvatar(
+                radius: 32,
+                child: Center(
+                  child: Text(userData[index].userName[0]),
                 ),
-                SizedBox(
-                  width: 16,
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("Leanne Graham"),
-                    SizedBox(height: 8),
-                    Text("1-770-736-8031 x56442"),
-                  ],
-                )
-              ],
-            ),
-          );
-        },
-      ),
+              ),
+              const SizedBox(
+                width: 16,
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(userData[index].userName),
+                  const SizedBox(height: 8),
+                  Text(userData[index].userPhone),
+                ],
+              )
+            ],
+          ),
+        );
+      },
     );
   }
 }
