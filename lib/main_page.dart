@@ -12,12 +12,25 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
+  int pageIndex = 0;
+
+  void onTabTapped(int index) {
+    setState(() {
+      pageIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       drawer: DrawerWidget(),
-      bottomNavigationBar: BottomNavBarWidget(),
-      body: BodyWidget(),
+      bottomNavigationBar: BottomNavBarWidget(
+        onTabTapped: onTabTapped,
+        pageIndex: pageIndex,
+      ),
+      body: BodyWidget(
+        pageIndex: pageIndex,
+      ),
       appBar: AppBarWidget(),
     );
   }
